@@ -1,46 +1,47 @@
-import Guitar from "./components/Guitar"
-import Header from "./components/header"
-import { useCart } from "./hooks/useCart"
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Guitar from "./components/Guitar";
+import AboutUs from "./components/AboutUs";
+import { useCart } from "./hooks/useCart";
+import Header from './components/header';
 
 function App() {
-
-  const { data, cart, addToCart, removeFromCart, decreaseQuantity, increaseQuantity, clearCart, isEmpty, cartTotal } = useCart()
+  const { data, cart, addToCart, removeFromCart, decreaseQuantity, increaseQuantity, clearCart, isEmpty, cartTotal } = useCart();
 
   return (
-    <>
-
-    <Header 
-      cart={cart}
-      removeFromCart={removeFromCart}
-      decreaseQuantity={decreaseQuantity}
-      increaseQuantity={increaseQuantity}
-      clearCart={clearCart}
-      isEmpty={isEmpty}
-      cartTotal={cartTotal}
-    />
-    <main className="container-xl mt-5">
-        <h2 className="text-center">Nuestra Colección</h2>
-
-        <div className="row mt-5">
-          {data.map ((guitar) => (
-            <Guitar 
-              key={guitar.id}
-              guitar={guitar}
-              addToCart={addToCart}
-            />
-          ))}
-        </div>
-    </main>
-
-
-    <footer className="bg-dark mt-5 py-5">
+    <Router>
+      <Header 
+        cart={cart}
+        removeFromCart={removeFromCart}
+        decreaseQuantity={decreaseQuantity}
+        increaseQuantity={increaseQuantity}
+        clearCart={clearCart}
+        isEmpty={isEmpty}
+        cartTotal={cartTotal}
+      />
+      <Routes>
+        <Route path="/" element={
+          <main className="container-xl mt-5">
+            <h2 className="text-center">Nuestra Colección</h2>
+            <div className="row mt-5">
+              {data.map((guitar) => (
+                <Guitar 
+                  key={guitar.id}
+                  guitar={guitar}
+                  addToCart={addToCart}
+                />
+              ))}
+            </div>
+          </main>
+        } />
+        <Route path="/sobre-nosotros" element={<AboutUs />} />
+      </Routes>
+      <footer className="bg-dark mt-5 py-5">
         <div className="container-xl">
-            <p className="text-white text-center fs-4 mt-4 m-md-0">Guitar Shop - Todos los derechos Reservados</p>
+          <p className="text-white text-center fs-4 mt-4 m-md-0">Guitar Shop - Todos los derechos Reservados</p>
         </div>
-    </footer>
-
-    </>
-  )
+      </footer>
+    </Router>
+  );
 }
 
-export default App
+export default App;

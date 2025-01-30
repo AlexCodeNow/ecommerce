@@ -194,10 +194,63 @@ p {
   margin-bottom: 1rem;
 }
 
+/* Estilo para el contenedor del logo y enlaces */
+.header .logo-container {
+  display: flex;
+  align-items: center; /* Alinea verticalmente los elementos */
+  gap: 1.5rem; /* Espacio entre los elementos */
+}
+
+/* Estilo para el logo */
+.header .logo-container img {
+  width: 150px; /* Ajusta este valor según el tamaño que desees */
+  height: auto; /* Mantiene la proporción de la imagen */
+  display: block;
+  min-width: 200px; /* Asegura que la imagen se muestre como un bloque */
+}
+
+/* Estilo para los enlaces "Home" y "Sobre Nosotros" */
+.home-link, .about-us-link {
+  font-family: "Outfit", sans-serif; /* Misma fuente que el h2 */
+  font-weight: 900; /* Mismo peso que el h2 */
+  font-size: 1.5rem; /* Ajusta este valor según el tamaño que desees */
+  color: #e99401 !important; /* Mismo color que el h2 */
+  text-decoration: none; /* Sin subrayado */
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+.home-link:hover, .about-us-link:hover {
+  color: darkgoldenrod !important; /* Cambia el color al pasar el mouse */
+}
+
+/* Estilo para el contenedor del carrito */
+.header .carrito-container {
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos */
+    gap: 1.5rem; /* Espacio entre los elementos */
+}
+
+/* Estilo para la imagen del carrito */
+.header .carrito img {
+    width: 40px; /* Ajusta este valor según el tamaño que desees */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.home-link::after {
+  content: "";
+  display: inline-block;
+  width: 1px; /* Grosor de la línea */
+  height: 20px; /* Altura de la línea */
+  background-color: #e99401; /* Color de la línea (puedes cambiarlo) */
+  margin: 0 1rem; /* Espacio a los lados de la línea */
+  vertical-align: middle; /* Alinea la línea verticalmente */
+}
+
 a {
   color: var(--bs-link-color);
   text-decoration: none;
 }
+
 a:hover {
   color: var(--bs-link-hover-color);
 }
@@ -206,6 +259,8 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
   color: inherit;
   text-decoration: none;
 }
+
+
 
 img,
 svg {
@@ -598,9 +653,7 @@ button:not(:disabled),
   justify-content: center !important;
 }
 
-.align-items-start {
-  align-items: flex-start !important;
-}
+
 
 .align-items-center {
   align-items: center !important;
@@ -619,9 +672,7 @@ button:not(:disabled),
   margin-top: 1.5rem !important;
 }
 
-.mt-5 {
-  margin-top: 3rem !important;
-}
+
 
 .p-2 {
   padding: 0.5rem !important;
