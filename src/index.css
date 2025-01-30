@@ -194,57 +194,78 @@ p {
   margin-bottom: 1rem;
 }
 
-/* Estilo para el contenedor del logo y enlaces */
+
 .header .logo-container {
   display: flex;
-  align-items: center; /* Alinea verticalmente los elementos */
-  gap: 1.5rem; /* Espacio entre los elementos */
+  align-items: center; 
+  gap: 1.5rem; 
 }
 
-/* Estilo para el logo */
+
 .header .logo-container img {
-  width: 150px; /* Ajusta este valor según el tamaño que desees */
-  height: auto; /* Mantiene la proporción de la imagen */
+  width: 150px; 
+  height: auto; 
   display: block;
-  min-width: 200px; /* Asegura que la imagen se muestre como un bloque */
+  min-width: 200px; 
 }
 
-/* Estilo para los enlaces "Home" y "Sobre Nosotros" */
+
 .home-link, .about-us-link {
-  font-family: "Outfit", sans-serif; /* Misma fuente que el h2 */
-  font-weight: 900; /* Mismo peso que el h2 */
-  font-size: 1.5rem; /* Ajusta este valor según el tamaño que desees */
-  color: #e99401 !important; /* Mismo color que el h2 */
-  text-decoration: none; /* Sin subrayado */
-  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  font-family: "Outfit", sans-serif; 
+  font-weight: 900; 
+  font-size: 1.5rem; 
+  color: #e99401 !important; 
+  text-decoration: none; 
+  white-space: nowrap; 
 }
 
 .home-link:hover, .about-us-link:hover {
-  color: darkgoldenrod !important; /* Cambia el color al pasar el mouse */
+  color: darkgoldenrod !important; 
 }
 
-/* Estilo para el contenedor del carrito */
+
 .header .carrito-container {
     display: flex;
-    align-items: center; /* Alinea verticalmente los elementos */
-    gap: 1.5rem; /* Espacio entre los elementos */
+    align-items: center; 
+    gap: 1.5rem; 
 }
 
-/* Estilo para la imagen del carrito */
+
 .header .carrito img {
-    width: 40px; /* Ajusta este valor según el tamaño que desees */
-    height: auto; /* Mantiene la proporción de la imagen */
+    width: 40px; 
+    height: auto;
 }
 
 .home-link::after {
   content: "";
   display: inline-block;
-  width: 1px; /* Grosor de la línea */
-  height: 20px; /* Altura de la línea */
-  background-color: #e99401; /* Color de la línea (puedes cambiarlo) */
-  margin: 0 1rem; /* Espacio a los lados de la línea */
-  vertical-align: middle; /* Alinea la línea verticalmente */
+  width: 1px; 
+  height: 20px; 
+  background-color: #e99401; 
+  margin: 0 1rem; 
+  vertical-align: middle; 
 }
+
+.btn-custom-amarillo {
+  background-color: #ffc107; 
+  border-color: #ffc107; 
+  color: #000; 
+  padding: 0.75rem 1.5rem; 
+  font-size: 1.25rem; 
+  font-weight: 900; 
+  border-radius: 0.5rem; 
+  transition: background-color 0.3s ease, border-color 0.3s ease; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-custom-amarillo:hover {
+  background-color: #d17c01; 
+  border-color: #d17c01; 
+  color: #000; 
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+
 
 a {
   color: var(--bs-link-color);

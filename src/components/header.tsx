@@ -16,9 +16,9 @@ export default function Header({cart, removeFromCart,  decreaseQuantity, increas
         <header className="py-5 header">
             <div className="container-xl">
                 <div className="row justify-content-center justify-content-md-between">
-                    {/* Contenedor del logo y enlaces */}
+
                     <div className="col-8 col-md-3 logo-container">
-                        {/* Logo */}
+
                         <Link to="/">
                             <img 
                                 className="img-fluid" 
@@ -28,7 +28,7 @@ export default function Header({cart, removeFromCart,  decreaseQuantity, increas
                             />
                         </Link>
 
-                        {/* Enlace "Home" */}
+
                         <Link 
                             to="/" 
                             className="home-link"
@@ -36,7 +36,7 @@ export default function Header({cart, removeFromCart,  decreaseQuantity, increas
                             Home
                         </Link>
 
-                        {/* Enlace "Sobre Nosotros" */}
+
                         <Link 
                             to="/sobre-nosotros" 
                             className="about-us-link"
@@ -45,7 +45,7 @@ export default function Header({cart, removeFromCart,  decreaseQuantity, increas
                         </Link>
                     </div>
 
-                    {/* Contenedor del carrito */}
+
                     <nav className="col-md-6 a mt-5 d-flex align-items-start justify-content-end carrito-container">
                         <div className="carrito">
                             <img className="img-fluid" src="/img/carrito.png" alt="imagen carrito" />
