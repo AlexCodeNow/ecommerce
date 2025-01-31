@@ -18,18 +18,20 @@ export const useCart = () => {
         localStorage.setItem('cart', JSON.stringify(cart))
       }, [cart])
     
-      function addToCart(item : Guitar) {
-        const itemExists = cart.findIndex(guitar => guitar.id === item.id)
-        if (itemExists >= 0) {
-          const updatedCart = [...cart]
-          updatedCart[itemExists].quantity++
-          setCart(updatedCart)
-        } else {
-          const newItem : CartItem = {...item, quantity : 1}
-          setCart([...cart, newItem])
-        }
+      function addToCart(item: Guitar) {
+        setCart((prevCart) => {
+          const itemExists = prevCart.findIndex(guitar => guitar.id === item.id);
+          if (itemExists >= 0) {
+            const updatedCart = [...prevCart];
+            updatedCart[itemExists].quantity++;
+            return updatedCart;
+          } else {
+            const newItem: CartItem = { ...item, quantity: 1 };
+            return [...prevCart, newItem];
+          }
+        });
       }
-    
+
       function removeFromCart (id : Guitar['id']) {
         setCart(prevCart => prevCart.filter(guitar => guitar.id !== id))
       }

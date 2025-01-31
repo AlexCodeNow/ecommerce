@@ -4,8 +4,7 @@ import AboutUs from "./components/AboutUs";
 import { useCart } from "./hooks/useCart";
 import Header from './components/header';
 import HeroSection from './components/HeroSection';
-import Catalogo from './components/Catalogo';
-
+import Catalogo from './components/Catalogo'; 
 
 function App() {
   const { data, cart, addToCart, removeFromCart, decreaseQuantity, increaseQuantity, clearCart, isEmpty, cartTotal } = useCart();
@@ -36,7 +35,6 @@ function App() {
                 ))}
               </div>
             </main>
-            
             <HeroSection />
           </>
         } />

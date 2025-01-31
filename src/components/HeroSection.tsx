@@ -8,7 +8,7 @@ const HeroSection: React.FC = () => {
         <div className="row align-items-center">
           <div className="col-md-6">
             <h2 className="display-4 fw-bold">¿Por qué comprar una guitarra?</h2>
-            <p className="lead">
+            <p className="lead p-separacion-boton">
               La guitarra es más que un instrumento; es una forma de expresión, creatividad y conexión. 
               Ya seas un principiante o un músico experimentado, una guitarra puede ser tu compañera 
               en cada etapa de tu viaje musical. ¡Encuentra la tuya hoy mismo!

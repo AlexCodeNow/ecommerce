@@ -265,7 +265,9 @@ p {
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-
+.p-separacion-boton {
+  margin-bottom: 3rem; 
+}
 
 a {
   color: var(--bs-link-color);
