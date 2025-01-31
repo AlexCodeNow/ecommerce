@@ -6,7 +6,7 @@ type GuitarProps = {
 };
 
 export default function Guitar({ guitar }: GuitarProps) {
-  const { addToCart } = useCartContext(); // Obtén addToCart desde el contexto
+  const { addToCart } = useCartContext(); 
   const { name, image, description, price } = guitar;
 
   return (

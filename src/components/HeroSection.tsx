@@ -21,7 +21,7 @@ const HeroSection: React.FC = () => {
             <img 
               src="/img/chico-tocando-guitarra.jpg" 
               alt="Chico tocando guitarra" 
-              className="img-fluid rounded"
+              className="img-fluid"
             />
           </div>
         </div>

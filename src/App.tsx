@@ -4,19 +4,23 @@ import AboutUs from "./components/AboutUs";
 import Header from './components/header';
 import HeroSection from './components/HeroSection';
 import Catalogo from './components/Catalogo';
-import { CartProvider, useCartContext } from './context/CartContext'; 
+import Opiniones from './components/Opiniones'; 
+import { CartProvider, useCartContext } from './context/CartContext';
+import CarruselGuitarras from './components/CarruselGuitarras';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
-
-  const { data } = useCartContext(); 
+  const { data } = useCartContext();
 
   return (
     <Router>
-      <CartProvider> 
+      <CartProvider>
         <Header />
         <Routes>
           <Route path="/" element={
             <>
+              <CarruselGuitarras /> 
               <main className="container-xl mt-5">
                 <h2 className="text-center">Nuestra Colección</h2>
                 <div className="row mt-5">
@@ -29,6 +33,7 @@ function App() {
                 </div>
               </main>
               <HeroSection />
+              <Opiniones /> 
             </>
           } />
           <Route path="/sobre-nosotros" element={<AboutUs />} />

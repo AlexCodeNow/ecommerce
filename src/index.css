@@ -194,6 +194,11 @@ p {
   margin-bottom: 1rem;
 }
 
+.carrito-custom {
+  flex: 0 0 auto;
+  width: 25%;
+}
+
 
 .header .logo-container {
   display: flex;
@@ -210,7 +215,7 @@ p {
 }
 
 
-.home-link, .about-us-link {
+.home-link, .about-us-link, .catalogo-link {
   font-family: "Outfit", sans-serif; 
   font-weight: 900; 
   font-size: 1.5rem; 
@@ -219,7 +224,7 @@ p {
   white-space: nowrap; 
 }
 
-.home-link:hover, .about-us-link:hover {
+.home-link:hover, .about-us-link:hover, .catalogo-link:hover {
   color: darkgoldenrod !important; 
 }
 
@@ -240,7 +245,27 @@ p {
   content: "";
   display: inline-block;
   width: 1px; 
-  height: 20px; 
+  height: 30px; 
+  background-color: #e99401; 
+  margin: 0 1rem; 
+  vertical-align: middle; 
+}
+
+.about-us-link::after {
+  content: "";
+  display: inline-block;
+  width: 1px; 
+  height: 30px; 
+  background-color: #e99401; 
+  margin: 0 1rem; 
+  vertical-align: middle; 
+}
+
+.catalogo-link::after {
+  content: "";
+  display: inline-block;
+  width: 1px; 
+  height: 30px; 
   background-color: #e99401; 
   margin: 0 1rem; 
   vertical-align: middle; 
@@ -426,7 +451,7 @@ button:not(:disabled),
 }
 .row > * {
   flex-shrink: 0;
-  width: 100%;
+
   max-width: 100%;
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);

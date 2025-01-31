@@ -31,11 +31,15 @@ export default function Header() {
             </Link>
 
             <Link to="/sobre-nosotros" className="about-us-link">
-              Conocenos
+              Conócenos
+            </Link>
+
+            <Link to="/catalogo" className="catalogo-link">
+              Catálogo
             </Link>
           </div>
 
-          <nav className="col-md-6 a mt-5 d-flex align-items-start justify-content-end carrito-container">
+          <nav className="carrito-custom a mt-5 d-flex align-items-start justify-content-end carrito-container">
             <div className="carrito">
               <img className="img-fluid" src="/img/carrito.png" alt="imagen carrito" />
               <div id="carrito" className="bg-white p-3">
