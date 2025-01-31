@@ -1,25 +1,17 @@
 import { Link } from 'react-router-dom';
-import type { CartItem, Guitar } from "../types";
+import { useCartContext } from '../context/CartContext';
 
-type HeaderProps = {
-  cart: CartItem[];
-  removeFromCart: (id: Guitar['id']) => void;
-  decreaseQuantity: (id: Guitar['id']) => void;
-  increaseQuantity: (id: Guitar['id']) => void;
-  clearCart: () => void;
-  isEmpty: boolean;
-  cartTotal: number;
-};
+export default function Header() {
+  const {
+    cart,
+    removeFromCart,
+    decreaseQuantity,
+    increaseQuantity,
+    clearCart,
+    isEmpty,
+    cartTotal,
+  } = useCartContext();
 
-export default function Header({
-  cart,
-  removeFromCart,
-  decreaseQuantity,
-  increaseQuantity,
-  clearCart,
-  isEmpty,
-  cartTotal,
-}: HeaderProps) {
   return (
     <header className="py-5 header">
       <div className="container-xl">

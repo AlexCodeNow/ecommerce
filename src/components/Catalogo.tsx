@@ -1,9 +1,10 @@
 import React from 'react';
 import Guitar from './Guitar';
-import { useCart } from '../hooks/useCart';
+import { useCartContext } from '../context/CartContext';
 
 const Catalogo: React.FC = () => {
-  const { data, addToCart } = useCart();
+  const { data } = useCartContext();
+
   return (
     <main className="container-xl mt-5">
       <h2 className="text-center">Catálogo de Guitarras</h2>
@@ -13,7 +14,6 @@ const Catalogo: React.FC = () => {
           <Guitar 
             key={guitar.id}
             guitar={guitar}
-            addToCart={addToCart} 
           />
         ))}
       </div>
