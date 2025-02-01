@@ -1,0 +1,17 @@
+.catalogoContainer {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+  
+  .catalogoTitle {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #e99401;
+    margin-bottom: 1rem;
+  }
+  
+  .catalogoDescription {
+    font-size: 1.25rem;
+    color: #666;
+    margin-bottom: 3rem;
+  }
