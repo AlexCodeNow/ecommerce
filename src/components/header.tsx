@@ -37,6 +37,10 @@ export default function Header() {
             <Link to="/catalogo" className="catalogo-link">
               Catálogo
             </Link>
+
+            <Link to="/faq" className="faq-link">
+              FAQ
+            </Link>
           </div>
 
           <nav className="carrito-custom a mt-5 d-flex align-items-start justify-content-end carrito-container">

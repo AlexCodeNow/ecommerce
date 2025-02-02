@@ -215,7 +215,7 @@ p {
 }
 
 
-.home-link, .about-us-link, .catalogo-link {
+.home-link, .about-us-link, .catalogo-link, .faq-link {
   font-family: "Outfit", sans-serif; 
   font-weight: 900; 
   font-size: 1.5rem; 
@@ -224,7 +224,7 @@ p {
   white-space: nowrap; 
 }
 
-.home-link:hover, .about-us-link:hover, .catalogo-link:hover {
+.home-link:hover, .about-us-link:hover, .catalogo-link:hover, .faq-link:hover {
   color: darkgoldenrod !important; 
 }
 
@@ -293,6 +293,7 @@ p {
 .p-separacion-boton {
   margin-bottom: 3rem; 
 }
+
 
 a {
   color: var(--bs-link-color);
