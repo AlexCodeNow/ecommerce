@@ -8,6 +8,7 @@ import Opiniones from './components/Opiniones';
 import { CartProvider, useCartContext } from './context/CartContext';
 import CarruselGuitarras from './components/CarruselGuitarras';
 import FAQ from './components/FAQ';
+import Footer from './components/Footer';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -26,7 +27,7 @@ function App() {
                 <h2 className="text-center">Nuestra Colección</h2>
                 <div className="row mt-5">
                   {data.map((guitar) => (
-                    <Guitar
+                    <Guitar 
                       key={guitar.id}
                       guitar={guitar}
                     />
@@ -34,18 +35,14 @@ function App() {
                 </div>
               </main>
               <HeroSection />
-              <Opiniones />
+              <Opiniones /> 
             </>
           } />
           <Route path="/sobre-nosotros" element={<AboutUs />} />
           <Route path="/catalogo" element={<Catalogo />} />
           <Route path="/faq" element={<FAQ />} />
         </Routes>
-        <footer className="bg-dark mt-5 py-5">
-          <div className="container-xl">
-            <p className="text-white text-center fs-4 mt-4 m-md-0">Guitar Shop - Todos los derechos Reservados</p>
-          </div>
-        </footer>
+        <Footer />
       </CartProvider>
     </Router>
   );
