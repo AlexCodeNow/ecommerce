@@ -1,0 +1,104 @@
+.customHeader {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/img/header.jpg");
+  background-position: 50%;
+  background-size: cover;
+  position: relative;
+}
+
+.customContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.customRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.customLogoContainer {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.customLogo {
+  width: 150px;
+  height: auto;
+  min-width: 200px;
+}
+
+.customLink {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.25rem;
+  transition: color 0.3s ease;
+}
+
+.customLink:hover {
+  color: #e99401;
+}
+
+.customCarritoContainer {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.customCarritoImg {
+  width: 40px;
+  height: auto;
+}
+
+.customCarritoContent {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menuHamburguesa {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .customLogo {
+    display: none;
+  }
+
+  .menuHamburguesa {
+    display: block;
+  }
+
+  .navLinks {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    z-index: 1000;
+  }
+
+  .navLinks.open {
+    display: flex;
+  }
+
+  .navLinks a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0.5rem 0;
+    font-size: 1.25rem;
+  }
+
+  .navLinks a:hover {
+    color: #e99401;
+  }
+}

@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useCartContext } from '../context/CartContext';
+import { useState, useEffect, useRef } from 'react';
+import styles from './Header.module.css';
 
 export default function Header() {
   const {
@@ -12,41 +14,68 @@ export default function Header() {
     cartTotal,
   } = useCartContext();
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <header className="py-5 header">
-      <div className="container-xl">
-        <div className="row justify-content-center justify-content-md-between">
-          <div className="col-8 col-md-3 logo-container">
-            <Link to="/">
+    <header className={`py-5 header ${styles.customHeader}`}>
+      <div className={`container-xl ${styles.customContainer}`}>
+        <div className={`row justify-content-center justify-content-md-between ${styles.customRow}`}>
+          <div className={`col-8 col-md-3 ${styles.customLogoContainer}`}>
+            <Link to="/" className={styles.customLogo}>
               <img
                 className="img-fluid"
                 src="/img/logo6.png"
                 alt="imagen logo"
-                style={{ visibility: 'visible', opacity: 1 }}
               />
             </Link>
 
-            <Link to="/" className="home-link">
-              Home
-            </Link>
-
-            <Link to="/sobre-nosotros" className="about-us-link">
-              Conócenos
-            </Link>
-
-            <Link to="/catalogo" className="catalogo-link">
-              Catálogo
-            </Link>
-
-            <Link to="/faq" className="faq-link">
-              FAQ
-            </Link>
+            <button className={styles.menuHamburguesa} onClick={toggleMenu}>
+              <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
+            </button>
           </div>
 
-          <nav className="carrito-custom a mt-5 d-flex align-items-start justify-content-end carrito-container">
-            <div className="carrito">
-              <img className="img-fluid" src="/img/carrito.png" alt="imagen carrito" />
-              <div id="carrito" className="bg-white p-3">
+          <nav
+            ref={menuRef}
+            className={`${styles.navLinks} ${isMenuOpen ? styles.open : ''}`}
+          >
+            <Link to="/" className={`home-link ${styles.customLink}`} onClick={() => setIsMenuOpen(false)}>
+              Home
+            </Link>
+            <Link to="/sobre-nosotros" className={`about-us-link ${styles.customLink}`} onClick={() => setIsMenuOpen(false)}>
+              Conócenos
+            </Link>
+            <Link to="/catalogo" className={`catalogo-link ${styles.customLink}`} onClick={() => setIsMenuOpen(false)}>
+              Catálogo
+            </Link>
+            <Link to="/faq" className={`faq-link ${styles.customLink}`} onClick={() => setIsMenuOpen(false)}>
+              FAQ
+            </Link>
+          </nav>
+
+          <nav className={`carrito-custom a mt-5 d-flex align-items-start justify-content-end ${styles.customCarritoContainer}`}>
+            <div className={`carrito ${styles.customCarrito}`}>
+              <img className={`img-fluid ${styles.customCarritoImg}`} src="/img/carrito.png" alt="imagen carrito" />
+              <div id="carrito" className={`bg-white p-3 ${styles.customCarritoContent}`}>
                 {isEmpty ? (
                   <p className="text-center">El carrito esta vacio</p>
                 ) : (

@@ -55,3 +55,21 @@
     font-size: 1rem;
     color: #666;
   }
+
+  @media (max-width: 768px) {
+    .opinionesContainer {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      overflow-x: visible;
+    }
+  
+    .opinionCard {
+      max-width: 100%;
+      width: 90%;
+    }
+  
+    .opinionesTitle {
+      font-size: 1.75rem;
+    }
+  }

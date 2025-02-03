@@ -20,3 +20,26 @@
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   }
+
+  @media (max-width: 768px) {
+    .aboutUsTitle {
+      font-size: 2rem;
+      text-align: center;
+    }
+  
+    .aboutUsText {
+      font-size: 1rem;
+      text-align: center;
+    }
+  
+    .aboutUsButton {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  
+    .aboutUsImage {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+  }

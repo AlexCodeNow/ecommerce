@@ -363,6 +363,7 @@ button,
 button:not(:disabled),
 [type=button]:not(:disabled) {
   cursor: pointer;
+  border-radius: 5px;
 }
 
 ::-moz-focus-inner {

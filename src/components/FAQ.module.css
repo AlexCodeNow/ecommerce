@@ -4,7 +4,7 @@
 }
 
 .faqTitle {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 900;
   color: #e99401;
   margin-bottom: 3rem;
@@ -22,6 +22,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   width: 80rem !important;
+  max-width: 1500px;
   margin: 0 auto;
   margin-bottom: 3rem;
 }
@@ -48,7 +49,7 @@
 }
 
 .faqQuestion {
-  font-size: 1.5rem !important;
+  font-size: 1.25rem !important;
   font-weight: 700 !important;
   color: #333 !important;
   margin-bottom: 0 !important;
@@ -57,7 +58,7 @@
 }
 
 .faqAnswer {
-  font-size: 1rem !important;
+  font-size: 0.9rem !important;
   color: #666 !important;
   margin-top: 1rem;
   text-align: center;
@@ -70,4 +71,24 @@
 
 .arrow.rotate {
   transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+  .faqTitle {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .faqCard {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .faqQuestion {
+    font-size: 1.1rem !important;
+  }
+
+  .faqAnswer {
+    font-size: 0.85rem !important;
+  }
 }
